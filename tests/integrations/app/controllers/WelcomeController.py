@@ -12,12 +12,11 @@ class WelcomeController(Controller):
     def show(self, view: View):
         user = User.first()
         # get random number
-        random_number = random.randint(100, 900)
 
         user.update({
-            'name': f'John {random_number}'
+            'name': f'John {random.randint(100, 900)}'
         })
-
+        
         return user
         return view.render("welcome", {"user": user})
 

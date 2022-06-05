@@ -15,8 +15,8 @@ class AuditProvider(PackageProvider, MasoniteAudit):
 
     def register(self):
         super().register()
+        self.observe()
 
     def boot(self):
         """Boots services required by the container."""
-        
-        self.observe()
+        pass

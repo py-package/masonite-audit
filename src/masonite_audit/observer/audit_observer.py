@@ -15,6 +15,8 @@ class AuditObserver:
             'model_name': model.get_table_name(),
             'columns': json.dumps(model.get_columns()),
             'new_value': model.serialize(),
+            'old_value': model.get_dirty_attributes(),
+            # 'old_value': model.get_original('name')
         }
     
     def created(self, model):
@@ -31,17 +33,21 @@ class AuditObserver:
         """
         print(self._parse_model(model, 'SAVED'))
 
+    # def updating(self, model):
+    #     """Handle the model "updating" event.
+    #     Args:
+    #         model (masoniteorm.models.Model): model model.
+    #     """
+    #     print('========================UPDATING========================')
+    #     print(model.get_dirty_attributes())
+
     def updated(self, model):
         """Handle the model "updated" event.
         Args:
             model (masoniteorm.models.Model): model model.
         """
-        print(model.get_dirty_keys())
-        print(model.get_dirty('name'))
-        print(model.get_original('name'))
-
-
-        # print(self._parse_model(model, 'UPDATED'))
+        print('========================UPDATED========================')
+        print(self._parse_model(model, 'UPDATED'))
 
     def deleted(self, model):
         """Handle the model "deleted" event.
