@@ -13,10 +13,10 @@ class AuditObserver:
         old_value = model.__original_attributes__
 
         for key in new_value:
-            if isinstance(new_value[key], datetime):
-                new_value[key] = new_value[key].to_datetime_string()
-            if isinstance(old_value[key], datetime):
-                old_value[key] = old_value[key].to_datetime_string()
+            if isinstance(new_value.get(key), datetime):
+                new_value[key] = new_value.get(key).to_datetime_string()
+            if isinstance(old_value.get(key), datetime):
+                old_value[key] = old_value.get(key).to_datetime_string()
 
         data = {
             "action": action,
