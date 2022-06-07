@@ -5,7 +5,6 @@ from datetime import datetime
 
 
 class AuditObserver:
-
     def _parse_model(self, model, action):
         """Parse the model to get the table name and primary key.
         Args:
@@ -21,12 +20,12 @@ class AuditObserver:
                 old_value[key] = old_value[key].to_datetime_string()
 
         data = {
-            'action': action,
-            'model_id': model.id,
-            'model_name': model.get_table_name(),
-            'columns': json.dumps(model.get_columns()),
-            'new_value': json.dumps(new_value),
-            'old_value': json.dumps(old_value),
+            "action": action,
+            "model_id": model.id,
+            "model_name": model.get_table_name(),
+            "columns": json.dumps(model.get_columns()),
+            "new_value": json.dumps(new_value),
+            "old_value": json.dumps(old_value),
         }
 
         AuditLog.create(data)
@@ -36,25 +35,25 @@ class AuditObserver:
         Args:
             model (masoniteorm.models.Model): model model.
         """
-        self._parse_model(model, 'CREATED')
+        self._parse_model(model, "CREATED")
 
     def saved(self, model):
         """Handle the model "saved" event.
         Args:
             model (masoniteorm.models.Model): model model.
         """
-        self._parse_model(model, 'SAVED')
+        self._parse_model(model, "SAVED")
 
     def updated(self, model):
         """Handle the model "updated" event.
         Args:
             model (masoniteorm.models.Model): model model.
         """
-        self._parse_model(model, 'UPDATED')
+        self._parse_model(model, "UPDATED")
 
     def deleted(self, model):
         """Handle the model "deleted" event.
         Args:
             model (masoniteorm.models.Model): model model.
         """
-        self._parse_model(model, 'DELETED')
+        self._parse_model(model, "DELETED")

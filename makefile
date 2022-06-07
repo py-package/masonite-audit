@@ -20,10 +20,10 @@ format: ## Format code with Black
 	black src
 	black tests
 coverage: ## Run package tests and upload coverage reports
-	python -m pytest --cov-report term --cov-report xml --cov=src/masonite/masonite_permission tests
+	python -m pytest --cov-report term --cov-report xml --cov=src/masonite/masonite_audit tests
 publish: ## Publish package to pypi
 	python setup.py sdist bdist_wheel
 	twine upload dist/* --verbose
-	rm -fr build dist .egg src/masonite_permission.egg-info
+	rm -fr build dist .egg src/masonite_audit.egg-info
 pypirc: ## Copy the template .pypirc in the repo to your home directory
 	cp .pypirc ~/.pypirc

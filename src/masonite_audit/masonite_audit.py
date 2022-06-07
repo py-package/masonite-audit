@@ -3,8 +3,8 @@ from masonite.configuration import config
 
 from .observer.audit_observer import AuditObserver
 
-class MasoniteAudit:
 
+class MasoniteAudit:
     def observe(self):
         from .mixins import Audit
 

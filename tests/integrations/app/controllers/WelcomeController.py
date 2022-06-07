@@ -23,6 +23,4 @@ class WelcomeController(Controller):
     def test(self):
         user = User.first()
 
-        return {
-
-        }
+        return {}
