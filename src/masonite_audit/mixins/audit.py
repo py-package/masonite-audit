@@ -1,4 +1,3 @@
-import collections
 from ..models.audit_log import AuditLog
 
 

@@ -1,6 +1,3 @@
-import importlib
-from masonite.configuration import config
-
 from .observer.audit_observer import AuditObserver
 
 

@@ -1,6 +1,5 @@
 import json
 from ..models.audit_log import AuditLog
-import pendulum
 from datetime import datetime
 
 
