@@ -66,6 +66,22 @@ class YourModel(Audit):
     pass
 ```
 
+If you want to get the audit history for a model, you can use the `history` method:
+
+```python
+user = User.find(1)
+user.history()
+```
+
+In order to rollback to previous versions of a model, you can use the `rollback` method:
+
+```python
+user = User.find(1)
+user.rollback() # to rollback to previous version
+# or
+user.rollback(step=4) # to rollback to version 4
+```
+
 ## Contributing
 
 Please read the [Contributing Documentation](CONTRIBUTING.md) here.
