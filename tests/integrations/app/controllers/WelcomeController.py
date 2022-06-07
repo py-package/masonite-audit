@@ -13,10 +13,10 @@ class WelcomeController(Controller):
         user = User.first()
         # get random number
 
-        user.update({
-            'name': f'John {random.randint(100, 900)}'
-        })
-        
+        # user.update({
+        #     'name': f'John {random.randint(100, 900)}'
+        # })
+        user.rollback()
         return user
         return view.render("welcome", {"user": user})
 
@@ -24,5 +24,5 @@ class WelcomeController(Controller):
         user = User.first()
 
         return {
-            
+
         }

@@ -58,6 +58,14 @@ This will add migrations and other `masonite-audit` related configuration to you
 python craft migrate
 ```
 
+Finally, inherit `Audit` mixin into all the models for which you need audit logging.
+
+```python
+from masonite_audit.mixins import Audit
+class YourModel(Audit):
+    pass
+```
+
 ## Contributing
 
 Please read the [Contributing Documentation](CONTRIBUTING.md) here.

@@ -11,9 +11,9 @@ class CreateAuditLogsTable(Migration):
             table.integer("model_id").unsigned()
             table.string("model_name")
             table.string("action")
-            table.json("columns")
-            table.json("old_value")
-            table.json("new_value")
+            table.json("columns").default("{}")
+            table.json("old_value").default("{}")
+            table.json("new_value").default("{}")
             table.timestamps()
 
     def down(self):
