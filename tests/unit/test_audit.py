@@ -16,12 +16,14 @@ class TestAudit(TestCase):
         QueryBuilder().table("users").truncate(True)
 
     def test_audit_created(self):
-        user = User.create({
-            "name": "Yubaraj",
-            "email": "user@example.com",
-            "password": Hash.make("secret"),
-            "phone": "+123456789",
-        })
+        user = User.create(
+            {
+                "name": "Yubaraj",
+                "email": "user@example.com",
+                "password": Hash.make("secret"),
+                "phone": "+123456789",
+            }
+        )
 
         self.assertDatabaseHas(
             "users",
@@ -36,5 +38,5 @@ class TestAudit(TestCase):
                 "model_id": user.id,
                 "model_name": "users",
                 "action": "CREATED",
-            }
+            },
         )
