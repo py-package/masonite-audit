@@ -14,7 +14,7 @@ class Audit(object):
     def rollback(self, step=1):
         """Rolls back a log to the model."""
         logs = self.history()
-        if len(logs) > step:
+        if len(logs) >= step:
             log = logs[step - 1]  # because step is index+1
             log.old_value.pop("updated_at")
             self.update(log.old_value)

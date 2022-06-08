@@ -14,3 +14,9 @@ class AuditLog(Model):
         "created_at",
         "updated_at",
     ]
+
+    __casts__ = {
+        "columns": "json",
+        "old_value": "json",
+        "new_value": "json",
+    }

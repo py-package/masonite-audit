@@ -1,4 +1,5 @@
 """A WelcomeController Module."""
+import random
 from masonite.views import View
 from masonite.controllers import Controller
 
@@ -15,7 +16,7 @@ class WelcomeController(Controller):
         # user.update({
         #     'name': f'John {random.randint(100, 900)}'
         # })
-        user.rollback()
+        # user.rollback()
         return user
         return view.render("welcome", {"user": user})
 
