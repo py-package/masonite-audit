@@ -7,3 +7,4 @@ psycopg2-binary==2.9.3
 black==22.3.0
 pytest==7.1.2
 twine==4.0.1
+autopep8==1.6.0
