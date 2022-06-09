@@ -1,13 +1,11 @@
 # Masonite Audit
 
 <p align="center">
-    <img src="https://banners.beyondco.de/Masonite Audit.png?theme=light&packageManager=pip+install&packageName=masonite-audit&pattern=topography&style=style_1&description=Keep track of all your model changes with ease.&md=1&showWatermark=1&fontSize=100px&images=https%3A%2F%2Fgblobscdn.gitbook.com%2Fspaces%2F-L9uc-9XAlqhXkBwrLMA%2Favatar.png">
+    <img src="https://banners.beyondco.de/Masonite%20Audit.png?theme=light&packageManager=pip+install&packageName=masonite-audit&pattern=charlieBrown&style=style_2&description=Keep+track+of+all+your+model+changes+with+ease.&md=1&showWatermark=1&fontSize=100px&images=adjustments&widths=50&heights=50">
 </p>
 
 <p align="center">
-  
   <img alt="GitHub Workflow Status" src="https://github.com/yubarajshrestha/masonite-audit/actions/workflows/pythonapp.yml/badge.svg">
-
   <img alt="PyPI" src="https://img.shields.io/pypi/v/masonite-audit">
   <img alt="issues" src="https://img.shields.io/github/issues/yubarajshrestha/masonite-audit">
   <img src="https://img.shields.io/badge/python-3.7+-blue.svg" alt="Python Version">
@@ -89,3 +87,4 @@ Please read the [Contributing Documentation](CONTRIBUTING.md) here.
 ## License
 
 Masonite Audit is open-sourced software licensed under the [MIT license](LICENSE).
+
