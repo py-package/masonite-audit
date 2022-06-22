@@ -40,3 +40,58 @@ class TestAudit(TestCase):
                 "action": "CREATED",
             },
         )
+
+    def test_audit_history(self):
+        user = User.create(
+            {
+                "name": "Yubaraj",
+                "email": "user@example.com",
+                "password": Hash.make("secret"),
+                "phone": "+123456789",
+            }
+        )
+
+        self.assertTrue(user.history().count() == 1)
+
+        user.update({
+            "name": "UB"
+        })
+
+        self.assertTrue(user.history().count() == 2)
+
+    def test_audit_rollback(self):
+        user = User.create(
+            {
+                "name": "Yubaraj",
+                "email": "user@example.com",
+                "password": Hash.make("secret"),
+                "phone": "+123456789",
+            }
+        )
+
+        self.assertDatabaseHas(
+            "users",
+            {
+                "name": "Yubaraj",
+            },
+        )
+
+        user.update({
+            "name": "UB"
+        })
+
+        self.assertDatabaseHas(
+            "users",
+            {
+                "name": "UB",
+            },
+        )
+
+        user.rollback()
+
+        self.assertDatabaseHas(
+            "users",
+            {
+                "name": "Yubaraj",
+            },
+        )
