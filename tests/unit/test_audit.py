@@ -53,9 +53,7 @@ class TestAudit(TestCase):
 
         self.assertTrue(user.history().count() == 1)
 
-        user.update({
-            "name": "UB"
-        })
+        user.update({"name": "UB"})
 
         self.assertTrue(user.history().count() == 2)
 
@@ -76,9 +74,7 @@ class TestAudit(TestCase):
             },
         )
 
-        user.update({
-            "name": "UB"
-        })
+        user.update({"name": "UB"})
 
         self.assertDatabaseHas(
             "users",
